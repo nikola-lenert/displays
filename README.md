@@ -1,5 +1,5 @@
 ## Displays task
-####💻Steps to run:
+#### 💻Steps to run:
 1. copy `.env.example` content to `.env` and adjust `DB_*` variables as needed
 2. run `composer install`
 3. run `npm install`
@@ -8,7 +8,7 @@
 6. run `npm run dev`
 7. run `php artisan serve`
 
-####📑Comments
+#### 📑Comments
 First of all I'd like to preface this by saying that this task was a great opportunity familiarize myself with even more
 core Laravel features.
 I made sure to explore and implement all the core functionalities in a way which
