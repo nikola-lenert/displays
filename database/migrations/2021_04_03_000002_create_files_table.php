@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateResellersTable extends Migration
+class CreateFilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateResellersTable extends Migration
      */
     public function up()
     {
-        Schema::create('resellers', function (Blueprint $table) {
+        Schema::create('files', function (Blueprint $table) {
             $table->integer('id', true, true);
-            $table->string('reseller_number');
             $table->string('name');
+            $table->string('mime_type');
+            $table->integer('size');
+            $table->string('path');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -29,6 +31,6 @@ class CreateResellersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('resellers');
+        Schema::dropIfExists('files');
     }
 }

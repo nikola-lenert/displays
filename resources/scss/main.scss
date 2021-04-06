@@ -1,0 +1,17 @@
+@import "variables";
+@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap-vue/src/index";
+
+body {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+}
+
+form {
+    .col {
+        margin-bottom: 1rem;
+    }
+}

@@ -17,6 +17,7 @@ class CreateDisplayTypesTable extends Migration
             $table->integer('id', true, true);
             $table->string('label');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

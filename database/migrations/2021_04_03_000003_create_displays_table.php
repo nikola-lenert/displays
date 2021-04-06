@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\DisplayType;
+use App\Models\File;
 use App\Models\Reseller;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -20,11 +21,13 @@ class CreateDisplaysTable extends Migration
             $table->string('serial_number');
             $table->integer('display_type_id', false, true);
             $table->integer('reseller_id', false, true);
-            $table->string('file_path');
+            $table->integer('file_id', false, true)->nullable();
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('display_type_id')->references('id')->on(app(DisplayType::class)->getTable());
             $table->foreign('reseller_id')->references('id')->on(app(Reseller::class)->getTable());
+            $table->foreign('file_id')->references('id')->on(app(File::class)->getTable());
         });
     }
 
@@ -40,6 +43,7 @@ class CreateDisplaysTable extends Migration
             // super useful since this way we don't have to use magic strings for table names
             $table->dropForeign(["display_type_id"]);
             $table->dropForeign(["reseller_id"]);
+
         });
 
         Schema::dropIfExists('displays');
